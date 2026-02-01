@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yeaty-Store.gh - Your Trusted Online Store in Ghana</title>
+    <meta name="description" content="Shop the best tech, fitness, and fashion products in Ghana with fast delivery">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'yeaty-yellow': '#FDB813',
+                        'yeaty-blue': '#0066CC',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50">
+    
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <a href="index.html" class="text-2xl font-bold">
+                        <span class="text-yeaty-yellow">Yeaty</span><span class="text-yeaty-blue">Store</span><span class="text-gray-700">.gh</span>
+                    </a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-yeaty-blue transition">Home</a>
+                    <a href="products.html" class="text-gray-700 hover:text-yeaty-blue transition">All Products</a>
+                    <a href="products.html?category=Tech Essentials Ghana" class="text-gray-700 hover:text-yeaty-blue transition">Tech</a>
+                    <a href="products.html?category=Fitness & Wellness Ghana" class="text-gray-700 hover:text-yeaty-blue transition">Fitness</a>
+                    <a href="products.html?category=Fashion Ghana" class="text-gray-700 hover:text-yeaty-blue transition">Fashion</a>
+                </div>
+                
+                <!-- Search & Mobile Menu Toggle -->
+                <div class="flex items-center space-x-4">
+                    <button id="searchBtn" class="text-gray-700 hover:text-yeaty-blue">
+                        <i class="fas fa-search text-xl"></i>
+                    </button>
+                    <button id="mobileMenuBtn" class="md:hidden text-gray-700">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="hidden md:hidden pb-4">
+                <a href="index.html" class="block py-2 text-gray-700 hover:text-yeaty-blue">Home</a>
+                <a href="products.html" class="block py-2 text-gray-700 hover:text-yeaty-blue">All Products</a>
+                <a href="products.html?category=Tech Essentials Ghana" class="block py-2 text-gray-700 hover:text-yeaty-blue">Tech Essentials</a>
+                <a href="products.html?category=Fitness & Wellness Ghana" class="block py-2 text-gray-700 hover:text-yeaty-blue">Fitness & Wellness</a>
+                <a href="products.html?category=Fashion Ghana" class="block py-2 text-gray-700 hover:text-yeaty-blue">Fashion</a>
+            </div>
+            
+            <!-- Search Bar -->
+            <div id="searchBar" class="hidden pb-4">
+                <div class="relative">
+                    <input type="text" id="searchInput" placeholder="Search products..." class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-yeaty-blue">
+                    <button id="searchSubmit" class="absolute right-3 top-2.5 text-yeaty-blue">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-yeaty-blue to-blue-600 text-white py-20">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6">Welcome to Yeaty-Store.gh</h1>
+                <p class="text-xl md:text-2xl mb-8">Your one-stop shop for quality tech, fitness, and fashion products delivered across Ghana</p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="products.html" class="bg-yeaty-yellow text-gray-900 px-8 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition">Shop Now</a>
+                    <a href="#categories" class="bg-white text-yeaty-blue px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition">Browse Categories</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section id="categories" class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">Shop by Category</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Tech Category -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition cursor-pointer" onclick="window.location.href='products.html?category=Tech Essentials Ghana'">
+                    <div class="bg-yeaty-blue h-48 flex items-center justify-center">
+                        <i class="fas fa-laptop text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2 text-gray-800">Tech Essentials Ghana</h3>
+                        <p class="text-gray-600 mb-4">Latest gadgets, electronics, and tech accessories</p>
+                        <span class="text-yeaty-blue font-semibold">Browse Tech →</span>
+                    </div>
+                </div>
+
+                <!-- Fitness Category -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition cursor-pointer" onclick="window.location.href='products.html?category=Fitness & Wellness Ghana'">
+                    <div class="bg-yeaty-yellow h-48 flex items-center justify-center">
+                        <i class="fas fa-dumbbell text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2 text-gray-800">Fitness & Wellness Ghana</h3>
+                        <p class="text-gray-600 mb-4">Equipment and products for your health journey</p>
+                        <span class="text-yeaty-blue font-semibold">Browse Fitness →</span>
+                    </div>
+                </div>
+
+                <!-- Fashion Category -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition cursor-pointer" onclick="window.location.href='products.html?category=Fashion Ghana'">
+                    <div class="bg-gradient-to-r from-yeaty-blue to-yeaty-yellow h-48 flex items-center justify-center">
+                        <i class="fas fa-tshirt text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2 text-gray-800">Fashion Ghana</h3>
+                        <p class="text-gray-600 mb-4">Trendy clothing, shoes, and fashion accessories</p>
+                        <span class="text-yeaty-blue font-semibold">Browse Fashion →</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products Section -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">Featured Products</h2>
+            <div id="featuredProducts" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <!-- Products will be loaded here dynamically -->
+                <div class="text-center py-12 col-span-full">
+                    <i class="fas fa-spinner fa-spin text-4xl text-yeaty-blue mb-4"></i>
+                    <p class="text-gray-600">Loading products...</p>
+                </div>
+            </div>
+            <div class="text-center mt-8">
+                <a href="products.html" class="bg-yeaty-blue text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition inline-block">View All Products</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">Why Choose Yeaty-Store.gh?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="bg-yeaty-yellow w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-shipping-fast text-white text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-2">Fast Delivery</h3>
+                    <p class="text-gray-600">Quick delivery across Ghana</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-yeaty-blue w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-shield-alt text-white text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-2">Secure Shopping</h3>
+                    <p class="text-gray-600">Safe and secure checkout</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-yeaty-yellow w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-star text-white text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-2">Quality Products</h3>
+                    <p class="text-gray-600">Only the best for you</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-yeaty-blue w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-headset text-white text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-2">24/7 Support</h3>
+                    <p class="text-gray-600">We're here to help</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">
+                        <span class="text-yeaty-yellow">Yeaty</span><span class="text-white">Store.gh</span>
+                    </h3>
+                    <p class="text-gray-400">Your trusted online shopping destination in Ghana</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-yeaty-yellow">Home</a></li>
+                        <li><a href="products.html" class="text-gray-400 hover:text-yeaty-yellow">Products</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-yeaty-yellow">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-yeaty-yellow">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Categories</h4>
+                    <ul class="space-y-2">
+                        <li><a href="products.html?category=Tech Essentials Ghana" class="text-gray-400 hover:text-yeaty-yellow">Tech Essentials</a></li>
+                        <li><a href="products.html?category=Fitness & Wellness Ghana" class="text-gray-400 hover:text-yeaty-yellow">Fitness & Wellness</a></li>
+                        <li><a href="products.html?category=Fashion Ghana" class="text-gray-400 hover:text-yeaty-yellow">Fashion</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Connect With Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-2xl text-gray-400 hover:text-yeaty-yellow"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-2xl text-gray-400 hover:text-yeaty-yellow"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-2xl text-gray-400 hover:text-yeaty-yellow"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-2xl text-gray-400 hover:text-yeaty-yellow"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2026 Yeaty-Store.gh. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/products.js"></script>
+</body>
+</html>
