@@ -12,6 +12,12 @@ const app = express();
 app.use(cors());  // <-- This MUST be here!
 app.use(express.json());
 
+// Update CORS for production
+app.use(cors({
+    origin: ['http://localhost:3000', 'https://yeaty-store-gh.vercel.app'],
+    credentials: true
+}));
+
 // Connect to MongoDB
 mongoose.connect(process.env.MONGODB_URI)
   .then(() => console.log('MongoDB Connected!'))
@@ -21,6 +27,7 @@ mongoose.connect(process.env.MONGODB_URI)
 app.use('/api/auth', require('./routes/auth'));       // Auth routes
 app.use('/api/products', require('./routes/products')); // Product routes
 app.use('/api/orders', require('./routes/orders'));     // Order routes
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // Test route
 app.get('/', (req, res) => {
