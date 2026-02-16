@@ -146,10 +146,34 @@
             }
         }
 
-        // Check if already logged in (redirect if already authenticated)
-        if (localStorage.getItem('token')) {
-            window.location.href = 'dashboard.html';
+  
+       // Check if already logged in AND token is valid
+const checkAuth = async () => {
+    const token = localStorage.getItem('token');
+    if (token) {
+        try {
+            // Verify token with backend
+            const response = await fetch('http://localhost:5000/api/auth/verify', {
+                headers: { 'Authorization': `Bearer ${token}` }
+            });
+            
+            if (response.ok) {
+                // Token is valid, redirect
+                window.location.href = 'dashboard.html';
+            } else {
+                // Token invalid/expired, clear it
+                localStorage.clear();
+                console.log('Token expired, cleared storage');
+            }
+        } catch (error) {
+            // Error checking token, clear it
+            localStorage.clear();
+            console.log('Error verifying token, cleared storage');
         }
+    }
+};
+
+checkAuth();
     </script>
     
     <!-- External login script handles form submission -->
