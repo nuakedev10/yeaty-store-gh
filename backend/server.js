@@ -6,6 +6,9 @@ const path = require('path');  // ← ADD THIS LINE
 
 const app = express();
 
+// Add this line to serve uploaded images
+app.use('/uploads', express.static('uploads'));
+
 // Middleware
 app.use(cors());
 app.use(express.json());

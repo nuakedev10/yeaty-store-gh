@@ -49,4 +49,8 @@ router.post('/login', async (req, res) => {
   }
 });
 
+router.get('/verify', protect, (req, res) => {
+    res.json({ valid: true, user: req.user });
+}); 
+
 module.exports = router;
